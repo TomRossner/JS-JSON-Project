@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    min-width: 100%;
+    overflow-x: hidden;
+    background-color: rgb(30, 30, 30);
+
+    .container{
+        min-width: 100%;
+        min-height: 90vh;
+
+        h1.title{
+            background: linear-gradient(150deg, rgba(150, 150, 150, 1) 0%, rgba(150, 150, 150, 1) 20%, rgba(78,245,147,1) 90%, rgba(78,245,147,1) 100%);
+            text-align: center;
+            font-weight: 600;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            margin-top: 1rem;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .grid-container{
+            width: 90%;
+            margin: 0 auto;
+            padding: 2rem 4rem;
+            border-radius: 20px;
+            display: grid;
+            flex-direction: column;
+            justify-content: center;
+            place-items: center;
+            gap: 2rem;
+            user-select: none;
+
+            .grid-item{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+                width: 250px;
+                height: 310px;
+                background-color: rgba(60, 60, 60, 0.5);
+                border-radius: 20px;
+                transition: background-color 0.2s, transform 0.3s;
+                cursor: pointer;
+
+                .detail:last-child{
+                    border-bottom: none;
+                    font-style: italic;
+                }
+
+                img{
+                    width: 100px;
+                    border-radius: 10px;
+                    box-shadow: 0 0 10px 0 rgb(30, 30, 30);
+                    margin: 1rem 0 0.5rem 0;
+                }
+
+                h3.detail{
+                    color: rgb(158, 158, 158);
+                    font-weight: 600;
+                }
+
+                .detail{
+                    padding: 1rem 0;
+                    width: 80%;
+                    text-align: center;
+                    color: rgb(230, 230, 230);
+                    border-bottom: 1px solid rgba(150, 150, 150, 1);
+                }
+            }
+            .grid-item:hover{
+                background-color: rgba(60, 60, 60, 0.8);
+                transform: translateY(-0.5rem);
+            }
+        }
+    }
+    footer{
+        text-align: center;
+        color: rgb(230, 230, 230);
+        font-size: 1rem;
+        opacity: 0.5;
+        font-style: italic;
+    }
+
+    @media only screen and (min-width: 1551px) and (max-width: 1920px){
+        .container{
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            gap: 10rem;
+        }
+        .grid-container{
+            grid-template-columns: repeat(5, 1fr);
+        }
+    }
+
+    @media only screen and (min-width: 1281px) and (max-width: 1550px){
+        .container{
+            min-height: 90vh;
+        }
+
+        .grid-container{
+            grid-template-columns: repeat(4, 1fr);
+
+            .grid-item:last-child{
+                grid-column-start: 2;
+                grid-column-end: 4;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 951px) and (max-width: 1280px){
+        .container{
+            min-height: 90vh;
+        }
+        
+        .grid-container{
+            grid-template-columns: repeat(3, 1fr);
+
+            .grid-item:nth-child(4){
+                grid-column-start: 1;
+                grid-column-end: 2;
+            }
+
+            .grid-item:last-child{
+                grid-column-start: 3;
+                grid-column-end: 4;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 700px) and (max-width: 950px){
+        .grid-container{
+            display: grid;
+            border: 1px solid red;
+            overflow: hidden;
+            grid-template-columns: repeat(2, 1fr);
+
+            .grid-item:last-child{
+                grid-column-start: 1;
+                grid-column-end: 3;
+            }
+        }
+    }
+}
