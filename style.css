@@ -34,10 +34,11 @@ body .container .grid-container {
   margin: 0 auto;
   padding: 2rem 4rem;
   border-radius: 20px;
-  display: grid;
-  flex-direction: column;
+  display: flex;
+  flex-direction: row;
   justify-content: center;
   place-items: center;
+  flex-wrap: wrap;
   gap: 2rem;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -95,36 +96,15 @@ body footer {
     flex-direction: column;
     gap: 10rem;
   }
-  body .grid-container {
-    grid-template-columns: repeat(5, 1fr);
-  }
 }
 @media only screen and (min-width: 1281px) and (max-width: 1550px) {
   body .container {
     min-height: 90vh;
   }
-  body .grid-container {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  body .grid-container .grid-item:last-child {
-    grid-column-start: 2;
-    grid-column-end: 4;
-  }
 }
 @media only screen and (min-width: 951px) and (max-width: 1280px) {
   body .container {
     min-height: 90vh;
-  }
-  body .grid-container {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  body .grid-container .grid-item:nth-child(4) {
-    grid-column-start: 1;
-    grid-column-end: 2;
-  }
-  body .grid-container .grid-item:last-child {
-    grid-column-start: 3;
-    grid-column-end: 4;
   }
 }
 @media only screen and (min-width: 700px) and (max-width: 950px) {
@@ -133,9 +113,5 @@ body footer {
     border: 1px solid red;
     overflow: hidden;
     grid-template-columns: repeat(2, 1fr);
-  }
-  body .grid-container .grid-item:last-child {
-    grid-column-start: 1;
-    grid-column-end: 3;
   }
 }/*# sourceMappingURL=style.css.map */
