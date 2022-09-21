@@ -19,6 +19,26 @@ body .container {
   min-width: 100%;
   min-height: 90vh;
 }
+body .container .reload-button {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgb(30, 30, 30);
+  background-color: rgb(220, 220, 220);
+  padding: 0.2rem 1rem;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 0 rgb(0, 0, 0);
+  transition: background-color 0.2s, color 0.2s, scale 0.15s;
+}
+body .container .reload-button:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: rgb(230, 230, 230);
+  scale: 1.07;
+  box-shadow: none;
+}
 body .container h1.title {
   background: linear-gradient(150deg, rgb(150, 150, 150) 0%, rgb(150, 150, 150) 20%, rgb(78, 245, 147) 90%, rgb(78, 245, 147) 100%);
   text-align: center;

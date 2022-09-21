@@ -1,17 +1,22 @@
 let richPeople = json_arr;
 const container = document.querySelector(".grid-container");
 
-function createCards(array){
-    let mediaQuery1280px1550px = window.matchMedia('(min-width: 1281px) and (max-width: 1550px)');
-    // let mediaQuery1280px1550px = window.matchMedia('(min-width: 1281px) and (max-width: 1550px)');
-    if(mediaQuery1280px1550px && array.length === 5){
-        // addGridItemProperty()
-        console.log("yes")
-    }
-
-
+function createCards(){
     container.innerHTML = "";
-    array.map(people => {
+    if(richPeople.length === 0){
+        container.innerHTML = `Nothing to show`;
+        container.style.fontSize = "2rem";
+        container.style.fontStyle = "italic";
+        container.style.color = "rgba(200, 200, 200, 0.2)";
+        container.style.flexDirection = "column";
+        const reloadBtn = document.createElement("button");
+        reloadBtn.className = "reload-button";
+        reloadBtn.innerText = "Reload Page";
+        reloadBtn.style.display = "block";
+        container.appendChild(reloadBtn);
+        reloadBtn.addEventListener("click", () => {location.reload()});
+    }
+    richPeople.map(people => {
         const newCard = document.createElement("div");
         const cardImg = document.createElement("img");
         const cardName = document.createElement("h3");
@@ -39,9 +44,7 @@ function createCards(array){
 function removeCard(event){
     const card = event.target.closest("[data-name]").dataset.name;
     richPeople = richPeople.filter((people) => people.name !== card);
-    console.log(richPeople)
-    console.log(card)
-    createCards(richPeople)
+    createCards()
 }
 
-createCards(richPeople);
+createCards();
