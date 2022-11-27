@@ -49,7 +49,7 @@ body .container h1.title {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-body .container .grid-container {
+body .container .flex-container {
   width: 90%;
   margin: 0 auto;
   padding: 2rem 4rem;
@@ -64,8 +64,9 @@ body .container .grid-container {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  text-align: center;
 }
-body .container .grid-container .grid-item {
+body .container .flex-container .flex-item {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -77,28 +78,28 @@ body .container .grid-container .grid-item {
   transition: background-color 0.2s, transform 0.3s;
   cursor: pointer;
 }
-body .container .grid-container .grid-item .detail:last-child {
+body .container .flex-container .flex-item .detail:last-child {
   border-bottom: none;
   font-style: italic;
 }
-body .container .grid-container .grid-item img {
+body .container .flex-container .flex-item img {
   width: 100px;
   border-radius: 10px;
   box-shadow: 0 0 10px 0 rgb(30, 30, 30);
   margin: 1rem 0 0.5rem 0;
 }
-body .container .grid-container .grid-item h3.detail {
+body .container .flex-container .flex-item h3.detail {
   color: rgb(158, 158, 158);
   font-weight: 600;
 }
-body .container .grid-container .grid-item .detail {
+body .container .flex-container .flex-item .detail {
   padding: 1rem 0;
   width: 80%;
   text-align: center;
   color: rgb(230, 230, 230);
   border-bottom: 1px solid rgb(150, 150, 150);
 }
-body .container .grid-container .grid-item:hover {
+body .container .flex-container .flex-item:hover {
   background-color: rgba(60, 60, 60, 0.8);
   transform: translateY(-0.5rem);
 }
@@ -128,9 +129,8 @@ body footer {
   }
 }
 @media only screen and (min-width: 700px) and (max-width: 950px) {
-  body .grid-container {
+  body .flex-container {
     display: grid;
-    border: 1px solid red;
     overflow: hidden;
     grid-template-columns: repeat(2, 1fr);
   }

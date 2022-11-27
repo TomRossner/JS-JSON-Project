@@ -52,7 +52,7 @@ body{
             -webkit-text-fill-color: transparent;
         }
 
-        .grid-container{
+        .flex-container{
             width: 90%;
             margin: 0 auto;
             padding: 2rem 4rem;
@@ -64,8 +64,9 @@ body{
             flex-wrap: wrap;
             gap: 2rem;
             user-select: none;
+            text-align: center;
 
-            .grid-item{
+            .flex-item{
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -102,7 +103,7 @@ body{
                     border-bottom: 1px solid rgba(150, 150, 150, 1);
                 }
             }
-            .grid-item:hover{
+            .flex-item:hover{
                 background-color: rgba(60, 60, 60, 0.8);
                 transform: translateY(-0.5rem);
             }
@@ -138,9 +139,8 @@ body{
     }
 
     @media only screen and (min-width: 700px) and (max-width: 950px){
-        .grid-container{
+        .flex-container{
             display: grid;
-            border: 1px solid red;
             overflow: hidden;
             grid-template-columns: repeat(2, 1fr);
         }
